@@ -1,3 +1,26 @@
-<p>
-  vehiculos works!
-</p>
+<div class="container mt-4">
+  <h2 class="mb-3">Listado de Vehículos</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>Marca</th>
+        <th>Línea</th>
+        <th>Modelo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of vehiculos">
+        <td>{{ v.marca }}</td>
+        <td>{{ v.linea }}</td>
+        <td>{{ v.modelo }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mt-4"> 
+    <div *ngFor="let marca of (marcaCount | keyvalue)">
+      {{ marca.key }}: {{ marca.value }}
+    </div>
+  </div>
+</div>
